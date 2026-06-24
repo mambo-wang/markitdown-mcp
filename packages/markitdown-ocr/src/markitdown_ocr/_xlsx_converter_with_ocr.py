@@ -84,7 +84,8 @@ class XlsxConverterWithOCR(DocumentConverter):
                 prefix="markitdown_ocr_"
             )
             os.makedirs(image_output_dir, exist_ok=True)
-            return self._convert_extract_only(file_stream, image_output_dir, **kwargs)
+            _eo_kwargs = {k: v for k, v in kwargs.items() if k not in ("image_output_dir",)}
+            return self._convert_extract_only(file_stream, image_output_dir, **_eo_kwargs)
 
         if ocr_service:
             # Remove ocr_service from kwargs to avoid duplicate argument error

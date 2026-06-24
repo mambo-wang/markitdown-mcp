@@ -28,6 +28,12 @@ dependencies = [
   "markitdown[all]>=0.1.1,<0.2.0",
 ]
 
+[project.optional-dependencies]
+ocr = [
+  "markitdown-ocr>=0.1.0",
+  "openai>=1.0.0",
+]
+
 [project.urls]
 Documentation = "https://github.com/microsoft/markitdown#readme"
 Issues = "https://github.com/microsoft/markitdown/issues"
