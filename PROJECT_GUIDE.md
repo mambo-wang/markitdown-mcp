@@ -135,8 +135,8 @@ MCP Server 在启动时创建临时根目录，每个文档的子目录基于文
 # macOS: brew install python@3.13
 
 # 2. 克隆项目
-git clone https://github.com/mambo-wang/markitdown-CN.git
-cd markitdown-CN
+git clone https://github.com/mambo-wang/markitdown-mcp.git
+cd markitdown-mcp
 
 # 3. 安装依赖
 pip install -e packages/markitdown
@@ -233,7 +233,7 @@ MARKITDOWN_ENABLE_PLUGINS=true markitdown document.pdf
 
 ## 六、与原版的主要差异
 
-| 方面 | 原版 markitdown | markitdown-CN |
+| 方面 | 原版 markitdown | markitdown-mcp |
 |------|----------------|---------------|
 | 图片识别 | 需要外部 LLM（OpenAI GPT-4o 等） | AI 助手自身视觉能力 |
 | MCP 工具 | 仅 `convert_to_markdown` | 新增 `analyze_document` |
