@@ -1,0 +1,148 @@
+{
+  "Azure_Service_Converters": {
+    "children": {},
+    "components": [
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::AzureKeyCredential",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::TokenCredential",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::ContentUnderstandingClient",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::UserAgentPolicy",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::DefaultAzureCredential",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::to_llm_input",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::ContentUnderstandingFileType",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_get_modality",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_detect_file_type",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_clean_mime_type",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_canonical_mime_type",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_content_type_for",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_detect_file_type_from_mime",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_resolve_analyzer_modality",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::_is_analyzer_compatible",
+      "packages\\markitdown\\src\\markitdown\\converters\\_cu_converter.py::ContentUnderstandingConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::AzureKeyCredential",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::TokenCredential",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::DocumentIntelligenceClient",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::AnalyzeDocumentRequest",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::AnalyzeResult",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::DocumentAnalysisFeature",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::DefaultAzureCredential",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::DocumentIntelligenceFileType",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::_get_mime_type_prefixes",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::_get_file_extensions",
+      "packages\\markitdown\\src\\markitdown\\converters\\_doc_intel_converter.py::DocumentIntelligenceConverter"
+    ]
+  },
+  "Core_Engine": {
+    "children": {},
+    "components": [
+      "packages\\markitdown\\src\\markitdown\\_markitdown.py::_load_plugins",
+      "packages\\markitdown\\src\\markitdown\\_markitdown.py::ConverterRegistration",
+      "packages\\markitdown\\src\\markitdown\\_markitdown.py::MarkItDown",
+      "packages\\markitdown\\src\\markitdown\\_base_converter.py::DocumentConverterResult",
+      "packages\\markitdown\\src\\markitdown\\_base_converter.py::DocumentConverter",
+      "packages\\markitdown\\src\\markitdown\\_exceptions.py::MarkItDownException",
+      "packages\\markitdown\\src\\markitdown\\_exceptions.py::MissingDependencyException",
+      "packages\\markitdown\\src\\markitdown\\_exceptions.py::UnsupportedFormatException",
+      "packages\\markitdown\\src\\markitdown\\_exceptions.py::FailedConversionAttempt",
+      "packages\\markitdown\\src\\markitdown\\_exceptions.py::FileConversionException",
+      "packages\\markitdown\\src\\markitdown\\_stream_info.py::StreamInfo",
+      "packages\\markitdown\\src\\markitdown\\_uri_utils.py::file_uri_to_path",
+      "packages\\markitdown\\src\\markitdown\\_uri_utils.py::parse_data_uri",
+      "packages\\markitdown\\src\\markitdown\\__main__.py::main",
+      "packages\\markitdown\\src\\markitdown\\__main__.py::_handle_output",
+      "packages\\markitdown\\src\\markitdown\\__main__.py::_exit_with_error"
+    ]
+  },
+  "DOCX_Math_Utils": {
+    "children": {},
+    "components": [
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::load",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::load_string",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::escape_latex",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::get_val",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::Tag2Method",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::Pr",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\math\\omml.py::oMath2Latex",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\pre_process.py::_convert_omath_to_latex",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\pre_process.py::_get_omath_tag_replacement",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\pre_process.py::_replace_equations",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\pre_process.py::_pre_process_math",
+      "packages\\markitdown\\src\\markitdown\\converter_utils\\docx\\pre_process.py::pre_process_docx"
+    ]
+  },
+  "Document_Format_Converters": {
+    "children": {},
+    "components": [
+      "packages\\markitdown\\src\\markitdown\\converters\\_docx_converter.py::DocxConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pptx_converter.py::PptxConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_xlsx_converter.py::XlsxConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_xlsx_converter.py::XlsConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::_merge_partial_numbering_lines",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::_to_markdown_table",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::fmt_row",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::_extract_form_content_from_words",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::extract_cells",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::_extract_tables_from_words",
+      "packages\\markitdown\\src\\markitdown\\converters\\_pdf_converter.py::PdfConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_outlook_msg_converter.py::OutlookMsgConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_epub_converter.py::EpubConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_ipynb_converter.py::IpynbConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_csv_converter.py::CsvConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_plain_text_converter.py::PlainTextConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_zip_converter.py::ZipConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_markdownify.py::_CustomMarkdownify"
+    ]
+  },
+  "MCP_Server": {
+    "children": {},
+    "components": [
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::convert_to_markdown",
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::check_plugins_enabled",
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::create_starlette_app",
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::handle_sse",
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::handle_streamable_http",
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::lifespan",
+      "packages\\markitdown-mcp\\src\\markitdown_mcp\\__main__.py::main"
+    ]
+  },
+  "Media_Converters": {
+    "children": {},
+    "components": [
+      "packages\\markitdown\\src\\markitdown\\converters\\_audio_converter.py::AudioConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_image_converter.py::ImageConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_transcribe_audio.py::transcribe_audio",
+      "packages\\markitdown\\src\\markitdown\\converters\\_llm_caption.py::llm_caption",
+      "packages\\markitdown\\src\\markitdown\\converters\\_exiftool.py::_parse_version",
+      "packages\\markitdown\\src\\markitdown\\converters\\_exiftool.py::exiftool_metadata"
+    ]
+  },
+  "OCR_Plugin": {
+    "children": {},
+    "components": [
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_docx_converter_with_ocr.py::DocxConverterWithOCR",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_ocr_service.py::OCRResult",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_ocr_service.py::LLMVisionOCRService",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_pdf_converter_with_ocr.py::_extract_images_from_page",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_pdf_converter_with_ocr.py::PdfConverterWithOCR",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_plugin.py::register_converters",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_pptx_converter_with_ocr.py::PptxConverterWithOCR",
+      "packages\\markitdown-ocr\\src\\markitdown_ocr\\_xlsx_converter_with_ocr.py::XlsxConverterWithOCR"
+    ]
+  },
+  "Sample_Plugin": {
+    "children": {},
+    "components": [
+      "packages\\markitdown-sample-plugin\\src\\markitdown_sample_plugin\\_plugin.py::register_converters",
+      "packages\\markitdown-sample-plugin\\src\\markitdown_sample_plugin\\_plugin.py::RtfConverter"
+    ]
+  },
+  "Web_Content_Converters": {
+    "children": {},
+    "components": [
+      "packages\\markitdown\\src\\markitdown\\converters\\_html_converter.py::HtmlConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_bing_serp_converter.py::BingSerpConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_rss_converter.py::RssConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_wikipedia_converter.py::WikipediaConverter",
+      "packages\\markitdown\\src\\markitdown\\converters\\_youtube_converter.py::YouTubeConverter"
+    ]
+  }
+}
