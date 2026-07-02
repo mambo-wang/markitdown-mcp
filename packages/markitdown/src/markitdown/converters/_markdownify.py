@@ -1,4 +1,7 @@
+import os
 import re
+import uuid
+import base64
 import markdownify
 
 from typing import Any, Optional
@@ -102,6 +105,23 @@ class _CustomMarkdownify(markdownify.MarkdownConverter):
             and el.parent.name not in self.options["keep_inline_images_in"]
         ):
             return alt
+
+        # Save data URIs to disk if image_output_dir is provided
+        image_output_dir = self.options.get("image_output_dir")
+        if src.startswith("data:") and image_output_dir:
+            try:
+                # Parse data URI: data:image/png;base64,<data>
+                header, b64_data = src.split(",", 1)
+                # Extract content type and determine extension
+                mime = header.split(";")[0].replace("data:", "")
+                ext = ".png" if "png" in mime else ".jpg"
+                img_filename = f"docx_img_{uuid.uuid4().hex[:12]}{ext}"
+                img_path = os.path.join(image_output_dir, img_filename)
+                with open(img_path, "wb") as f:
+                    f.write(base64.b64decode(b64_data))
+                return "![%s](%s%s)" % (alt, img_path, title_part)
+            except Exception:
+                pass
 
         # Remove dataURIs
         if src.startswith("data:") and not self.options["keep_data_uris"]:

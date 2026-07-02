@@ -4,6 +4,7 @@ import os
 import io
 import re
 import html
+import uuid
 
 from typing import BinaryIO, Any
 from operator import attrgetter
@@ -140,8 +141,19 @@ class PptxConverter(DocumentConverter):
                     alt_text = re.sub(r"[\r\n\[\]]", " ", alt_text)
                     alt_text = re.sub(r"\s+", " ", alt_text).strip()
 
+                    # If image_output_dir is provided, save image to disk
+                    image_output_dir = kwargs.get("image_output_dir")
+                    if image_output_dir:
+                        blob = shape.image.blob
+                        content_type = shape.image.content_type or "image/png"
+                        ext = ".png" if "png" in content_type else ".jpg"
+                        img_filename = f"pptx_img_{uuid.uuid4().hex[:12]}{ext}"
+                        img_path = os.path.join(image_output_dir, img_filename)
+                        with open(img_path, "wb") as f:
+                            f.write(blob)
+                        md_content += f"\n![{alt_text}]({img_path})\n"
                     # If keep_data_uris is True, use base64 encoding for images
-                    if kwargs.get("keep_data_uris", False):
+                    elif kwargs.get("keep_data_uris", False):
                         blob = shape.image.blob
                         content_type = shape.image.content_type or "image/png"
                         b64_string = base64.b64encode(blob).decode("utf-8")

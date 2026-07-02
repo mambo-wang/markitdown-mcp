@@ -1,6 +1,8 @@
 import sys
 import io
+import os
 import re
+import uuid
 from typing import BinaryIO, Any
 
 from .._base_converter import DocumentConverter, DocumentConverterResult
@@ -585,5 +587,33 @@ class PdfConverter(DocumentConverter):
 
         # Post-process to merge MasterFormat-style partial numbering with following text
         markdown = _merge_partial_numbering_lines(markdown)
+
+        # Extract images if image_output_dir is provided
+        image_output_dir = kwargs.get("image_output_dir")
+        if image_output_dir:
+            pdf_bytes.seek(0)
+            try:
+                with pdfplumber.open(pdf_bytes) as pdf:
+                    for page in pdf.pages:
+                        for img_info in page.images:
+                            x0 = img_info["x0"]
+                            top = img_info["top"]
+                            x1 = img_info["x1"]
+                            bottom = img_info["bottom"]
+                            # Skip tiny images (decorative lines, spacers)
+                            if (x1 - x0) < 15 or (bottom - top) < 15:
+                                continue
+                            try:
+                                cropped = page.within_bbox((x0, top, x1, bottom))
+                                img = cropped.to_image(resolution=200)
+                                img_filename = f"pdf_img_{uuid.uuid4().hex[:12]}.png"
+                                img_path = os.path.join(image_output_dir, img_filename)
+                                img.save(img_path)
+                                markdown += f"\n![image]({img_path})\n"
+                            except Exception:
+                                pass
+                        page.close()
+            except Exception:
+                pass
 
         return DocumentConverterResult(markdown=markdown)
